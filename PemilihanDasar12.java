@@ -12,6 +12,25 @@ public class PemilihanDasar12 {
         System.out.print("Masukkan jumlah uang yang dibayarkan: ");
         uangBayar = sc.nextInt();
 
+        totalHarga = hargaPerCup * jumlahCup;
+        diskon = 0;
+
+        if (totalHarga >= 100000) {
+            diskon = totalHarga * 10 / 100;
+        }
+
+        totalBayar = totalHarga - diskon;
+        System.out.println("Total harga: " + totalHarga);
+        System.out.println("Diskon: " + diskon);
+        System.out.println("Total yang harus dibayar: " + totalBayar);
+
+        if (uangBayar >= totalBayar) {
+            kembalian = uangBayar - totalBayar;
+            System.out.println("Kembalian: " + kembalian);
+        } else {
+            kurang = totalBayar - uangBayar;
+            System.out.println("Uang tidak cukup, kurang: " + kurang);
+        }
 
     }
 }
